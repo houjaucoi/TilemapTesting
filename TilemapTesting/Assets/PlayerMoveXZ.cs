@@ -59,7 +59,8 @@ public class PlayerMoveXZ : MonoBehaviour
     private bool CanMove(Vector3 direction)
     {
         Vector3Int gridPos = groundTilemap.WorldToCell(transform.position + direction);
-        
+        Debug.LogWarning(transform.position + direction);
+
         if (!groundTilemap.HasTile(gridPos) || obstacleTilemap.HasTile(gridPos))
         {
             return false;
